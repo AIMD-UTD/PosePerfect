@@ -1,49 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f3f4f6;
-  color: #111827;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #d6ebf9, #cbe6f5);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  transition: background 0.4s ease;
+  background-attachment: fixed;
 }
 
-.container {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+.upload-box {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 40px 50px;
+  border-radius: 25px;
   text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+  max-width: 500px;
+  width: 90%;
 }
 
 h1 {
-  color: #2563eb;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 25px;
 }
 
-input[type="file"] {
-  margin-bottom: 1rem;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-input {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 16px;
 }
 
 button {
-  padding: 10px 20px;
   background-color: #2563eb;
   color: white;
+  font-weight: 600;
+  padding: 12px 22px;
+  font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
+  background-color: #1e40af;
+}
+
+.image-preview img {
+  margin-top: 30px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .feedback {
-  margin-top: 2rem;
-  background: #e0f2fe;
-  padding: 1rem;
-  border-radius: 12px;
-  font-size: 1rem;
+  margin-top: 30px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.lottie-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+.success-msg {
+  margin-top: 15px;
+  color: #22c55e;
+  font-weight: 600;
+  animation: fadeIn 0.5s ease;
+}
+.top-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.top-btn:hover {
+  background-color: #1d4ed8;
+}
+form input {
+  margin-bottom: 14px;
+}
+form input {
+  width: 300px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+}
+/* Existing styles above... */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* ✅ Add this at the very end */
+input[type="file"] {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
 }
